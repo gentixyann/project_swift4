@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CwP-ym-bma">
-                                <rect key="frame" x="0.0" y="111" width="375" height="556"/>
+                                <rect key="frame" x="0.0" y="129" width="375" height="538"/>
                             </mapView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="L1L-xe-56h">
-                                <rect key="frame" x="16" y="32" width="343" height="30"/>
+                                <rect key="frame" x="16" y="50" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
@@ -35,12 +35,16 @@
                             <constraint firstItem="CwP-ym-bma" firstAttribute="top" secondItem="L1L-xe-56h" secondAttribute="bottom" constant="49" id="BD8-xG-3Ui"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="L1L-xe-56h" secondAttribute="trailing" constant="16" id="H1O-53-U7U"/>
                             <constraint firstItem="CwP-ym-bma" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IJi-GA-ezw"/>
-                            <constraint firstItem="L1L-xe-56h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="Qep-xe-hOa"/>
                             <constraint firstItem="CwP-ym-bma" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="a6n-Iv-rY9"/>
+                            <constraint firstItem="L1L-xe-56h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="ddH-9s-lIo"/>
                             <constraint firstItem="CwP-ym-bma" firstAttribute="top" secondItem="L1L-xe-56h" secondAttribute="bottom" constant="49" id="mZk-XH-86l"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="displayMap" destination="CwP-ym-bma" id="c6u-5h-qTU"/>
+                        <outlet property="inputText" destination="L1L-xe-56h" id="QcB-3o-urp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
