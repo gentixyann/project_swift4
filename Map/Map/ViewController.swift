@@ -29,6 +29,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         print(searchKeyword!)
         
+        let geocode = CLGeocoder()
+        
+        geocode.geocodeAddressString(searchKeyword!, completionHandler: { (placemarks:
+            [CLPlacemark]?, error:Error?)in
+            
+            if let placemark = placemarks?[0]{
+                if let targetCoordinate = placemark.location?.coordinate{
+                    print(targetCoordinate)
+                }
+            }
+        })
+        
         return true
     }
 
