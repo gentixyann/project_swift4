@@ -9,10 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var timer: Timer?
+    var duration = 0
+    let settingKey = "timerValue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let setting = UserDefaults.standard
+        setting.register(defaults: [settingKey: 60])
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +40,15 @@ class ViewController: UIViewController {
     
     
     @IBAction func stopTimerAction(_ sender: Any) {
+    }
+    
+    func displayUpdate() -> Int{
+        let settings = UserDefaults.standard
+        let timerValue = settings.integer(forKey: settingKey)
+        let remainSeconds = timerValue - duration
+        timeDisplay.text = "あと\(remainSeconds)秒"
+        
+        return remainSeconds
     }
 }
 
