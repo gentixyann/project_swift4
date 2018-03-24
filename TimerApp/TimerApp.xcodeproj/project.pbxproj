@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B2057FD82066874D00DCDDF6 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2057FD72066874D00DCDDF6 /* SettingViewController.swift */; };
 		B2CB069B206632D2009E0536 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB069A206632D2009E0536 /* AppDelegate.swift */; };
 		B2CB069D206632D2009E0536 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2CB069C206632D2009E0536 /* ViewController.swift */; };
 		B2CB06A0206632D2009E0536 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2CB069E206632D2009E0536 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B2057FD72066874D00DCDDF6 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		B2CB0697206632D2009E0536 /* TimerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2CB069A206632D2009E0536 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2CB069C206632D2009E0536 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				B2CB069A206632D2009E0536 /* AppDelegate.swift */,
 				B2CB069C206632D2009E0536 /* ViewController.swift */,
 				B2CB069E206632D2009E0536 /* Main.storyboard */,
+				B2057FD72066874D00DCDDF6 /* SettingViewController.swift */,
 				B2CB06A1206632D2009E0536 /* Assets.xcassets */,
 				B2CB06A3206632D2009E0536 /* LaunchScreen.storyboard */,
 				B2CB06A6206632D2009E0536 /* Info.plist */,
@@ -261,6 +264,7 @@
 			files = (
 				B2CB069D206632D2009E0536 /* ViewController.swift in Sources */,
 				B2CB069B206632D2009E0536 /* AppDelegate.swift in Sources */,
+				B2057FD82066874D00DCDDF6 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

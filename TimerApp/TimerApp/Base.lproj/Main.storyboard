@@ -21,13 +21,19 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1J-lt-iRI">
                                 <rect key="frame" x="32.5" y="358.5" width="150" height="150"/>
                                 <state key="normal" image="startBtn"/>
+                                <connections>
+                                    <action selector="startTimerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cQS-a1-sV7"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rRz-XO-ir6">
                                 <rect key="frame" x="192.5" y="358.5" width="150" height="150"/>
                                 <state key="normal" image="stopBtn"/>
+                                <connections>
+                                    <action selector="stopTimerAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekJ-uu-K1j"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6Z-S9-zwB">
-                                <rect key="frame" x="88" y="209" width="200" height="50"/>
+                                <rect key="frame" x="87" y="209" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="h4p-cT-29p"/>
                                     <constraint firstAttribute="height" constant="50" id="sAt-JI-JjZ"/>
@@ -50,12 +56,58 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ec3-dq-p21">
-                        <barButtonItem key="rightBarButtonItem" title="Time setting" id="gqP-Gy-78M"/>
+                        <barButtonItem key="rightBarButtonItem" title="Time setting" id="gqP-Gy-78M">
+                            <connections>
+                                <action selector="settingButtonAction:" destination="BYZ-38-t0r" id="saK-6f-qm2"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="timeDisplay" destination="T6Z-S9-zwB" id="8HJ-vA-1UD"/>
+                        <segue destination="vQy-Lj-wXQ" kind="show" identifier="openSetting" id="OJ0-uq-ac6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="476" y="133.5832083958021"/>
+        </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="cEW-Mv-tnN">
+            <objects>
+                <viewController id="vQy-Lj-wXQ" customClass="SettingViewController" customModule="TimerApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7L5-qc-9MM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBG-wl-mhP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="216"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfb-co-CVU">
+                                <rect key="frame" x="112" y="358.5" width="150" height="150"/>
+                                <state key="normal" image="selectBtn"/>
+                                <connections>
+                                    <action selector="chooseAction:" destination="vQy-Lj-wXQ" eventType="touchUpInside" id="zFZ-ht-23R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xfb-co-CVU" firstAttribute="centerX" secondItem="7L5-qc-9MM" secondAttribute="centerX" id="6wg-Qp-njX"/>
+                            <constraint firstItem="zBG-wl-mhP" firstAttribute="top" secondItem="Pk3-zY-NyL" secondAttribute="top" id="Ir4-CU-VpE"/>
+                            <constraint firstItem="Xfb-co-CVU" firstAttribute="centerY" secondItem="7L5-qc-9MM" secondAttribute="centerY" constant="100" id="efU-cw-pjY"/>
+                            <constraint firstItem="zBG-wl-mhP" firstAttribute="trailing" secondItem="Pk3-zY-NyL" secondAttribute="trailing" id="h2L-IB-qKB"/>
+                            <constraint firstItem="Xfb-co-CVU" firstAttribute="centerY" secondItem="7L5-qc-9MM" secondAttribute="centerY" constant="100" id="ouF-Ur-fAl"/>
+                            <constraint firstItem="zBG-wl-mhP" firstAttribute="leading" secondItem="Pk3-zY-NyL" secondAttribute="leading" id="yaT-Kp-jsK"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Pk3-zY-NyL"/>
+                    </view>
+                    <connections>
+                        <outlet property="timerPicker" destination="zBG-wl-mhP" id="mMW-hX-Q5Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ruL-Cy-DA4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1252" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1DI-9a-zPm">
@@ -77,6 +129,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="selectBtn" width="150" height="150"/>
         <image name="startBtn" width="150" height="150"/>
         <image name="stopBtn" width="150" height="150"/>
     </resources>

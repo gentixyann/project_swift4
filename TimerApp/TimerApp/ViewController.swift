@@ -21,5 +21,18 @@ class ViewController: UIViewController {
     }
 
 
+    @IBOutlet weak var timeDisplay: UILabel!
+    
+    
+    @IBAction func settingButtonAction(_ sender: Any) {
+    }
+    
+    
+    @IBAction func startTimerAction(_ sender: Any) {
+    }
+    
+    
+    @IBAction func stopTimerAction(_ sender: Any) {
+    }
 }
 
