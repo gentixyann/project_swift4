@@ -52,5 +52,28 @@ class SettingViewController: UIViewController, UIPickerViewDataSource, UIPickerV
     
     
     @IBAction func chooseAction(_ sender: Any) {
+        //一つ前の画面に戻る
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        //行数と列数がカウントされる
+        return valueArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return String(valueArray[row])
+    }
+    
+    //選択された時どうするか
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let settings = UserDefaults.standard
+        settings.set(valueArray[row], forKey: settingKey)
+        //同期する
+        settings.synchronize()
     }
 }
