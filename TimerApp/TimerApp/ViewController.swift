@@ -32,6 +32,13 @@ class ViewController: UIViewController {
     
     
     @IBAction func settingButtonAction(_ sender: Any) {
+        if let nowTimer = timer {
+            if nowTimer.isValid == true{
+                nowTimer.invalidate()
+            }
+        }
+        //segueを開くメソッド
+        performSegue(withIdentifier: "openSetting", sender: nil)
     }
     
     
