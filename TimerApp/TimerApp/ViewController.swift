@@ -26,6 +26,13 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        //戻った時に秒数をリセット
+        duration = 0
+        //ただ実行するだけやから、名無し変数にdisplayUpdateを渡す。
+        _ = displayUpdate()
+    }
 
 
     @IBOutlet weak var timeDisplay: UILabel!

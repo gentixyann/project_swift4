@@ -8,10 +8,26 @@
 
 import UIKit
 
-class SettingViewController: UIViewController {
+class SettingViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    
+    let valueArray : [Int] = [10,30,60,120,180]
+    let settingKey = "timerValue"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //タップ後、どの関数を呼び出すかdelegate
+        timerPicker.delegate = self
+        timerPicker.dataSource = self
+        
+        let settings = UserDefaults.standard
+        let timerValue = settings.integer(forKey: settingKey)
+        
+        for row in 0..<valueArray.count{
+            if valueArray[row] == timerValue{
+                timerPicker.selectRow(row, inComponent: 0, animated: true)
+            }
+        }
 
         // Do any additional setup after loading the view.
     }
