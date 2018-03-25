@@ -37,7 +37,6 @@ class ViewController: UIViewController {
     
     @IBAction func startTimerAction(_ sender: Any) {
         if let nowTimer = timer{
-            
             //isValid 有効かどうかを確かめる関数
             if nowTimer.isValid == true {
                 return
@@ -49,6 +48,11 @@ class ViewController: UIViewController {
     
     
     @IBAction func stopTimerAction(_ sender: Any) {
+        if let nowTimer = timer{
+            if nowTimer.isValid == true{
+                nowTimer.invalidate()
+            }
+        }
     }
     
     func displayUpdate() -> Int{
