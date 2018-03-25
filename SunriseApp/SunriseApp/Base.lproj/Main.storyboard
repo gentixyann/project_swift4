@@ -40,6 +40,9 @@
                                 <state key="normal" title="cheack sunrise time">
                                     <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="findrise:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7PY-dO-znQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.91162351402801078" blue="0.85166721340261731" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -47,7 +50,7 @@
                     </view>
                     <connections>
                         <outlet property="cityNameInput" destination="A9V-lx-T7w" id="hMh-D8-4FF"/>
-                        <outlet property="findSunrise" destination="n9A-1y-C3u" id="pbP-11-4KT"/>
+                        <outlet property="findSunrise" destination="n9A-1y-C3u" id="jfR-QB-5SZ"/>
                         <outlet property="sunriseTimeLabel" destination="rKF-Oq-DfC" id="Hp9-Cd-ZdN"/>
                     </connections>
                 </viewController>

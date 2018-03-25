@@ -28,8 +28,13 @@ class ViewController: UIViewController {
     }
     
     //沢山コード書きたいからこれだけ下にした
-    @IBOutlet weak var findSunrise: UIButton!
-    
-
+    // \（変数名）で文字列に変数代入
+    @IBAction func findSunrise(_ sender: Any) {
+        let url = "https://query.yahooapis.com/v1/public/yql?q=select%20astronomy.sunrise%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22\(cityNameInput.text!)%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
+        getURL(url:url)
+    }
+    func getURL(url:String){
+        
+    }
 }
 
