@@ -36,6 +36,15 @@ class ViewController: UIViewController {
     
     
     @IBAction func startTimerAction(_ sender: Any) {
+        if let nowTimer = timer{
+            
+            //isValid 有効かどうかを確かめる関数
+            if nowTimer.isValid == true {
+                return
+            }
+        }
+        // _は省略する記号
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(self.timerStop(_:)), userInfo: nil, repeats: true)
     }
     
     
@@ -49,6 +58,14 @@ class ViewController: UIViewController {
         timeDisplay.text = "あと\(remainSeconds)秒"
         
         return remainSeconds
+    }
+    
+    @objc func timerStop(_ timer: Timer){
+        duration += 1
+        if displayUpdate() <= 0 {
+            duration = 0
+            timer.invalidate()
+        }
     }
 }
 
