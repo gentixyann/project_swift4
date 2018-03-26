@@ -39,7 +39,13 @@ class ViewController: UIViewController {
         let apiURL = URL(string:url)!
         let data = try Data(contentsOf: apiURL)
         let json = try JSONSerialization.jsonObject(with: data) as! [String:Any]
-        print(json)
+        //print(json)
+            let query = json["query"] as! [String:Any]
+            let results = query["results"] as! [String:Any]
+            let channel = results["channel"] as! [String:Any]
+            let astronomy = channel["astronomy"] as! [String:Any]
+            
+            self.sunriseTimeLabel.text = "Sunrise time: \(astronomy["sunrise"]!)"
             
         }catch{
             self.sunriseTimeLabel.text = "Server has error"
