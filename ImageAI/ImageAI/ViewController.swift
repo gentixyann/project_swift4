@@ -6,7 +6,10 @@
 //  Copyright © 2018年 Gento. All rights reserved.
 //
 
+//複数のクラス定義集をswiftではフレームワークという
 import UIKit
+import CoreML
+import Vision
 
 //Delegateはイベントを検知してプログラムに渡す役割
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
@@ -39,7 +42,44 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         photoDisplay.image = info[UIImagePickerControllerOriginalImage] as? UIImage
         imagePicker.dismiss(animated: true, completion: nil)
+        imagenInference(image: (info[UIImagePickerControllerOriginalImage] as? UIImage)!)
+    }
+    //画像の判定（推測の意味でInference）
+    func imagenInference(image: UIImage) {
+        //モデルを読み込む処理 guardはある条件を満たしていたら処理をする
+        guard let model = try? VNCoreMLModel(for: Resnet50().model) else {
+            fatalError("モデルをロードできん")
+        }
+        
+        let request = VNCoreMLRequest(model: model) {
+            [weak self] request, error in
+            
+            guard let results = request.results as? [VNClassificationObservation],
+                let firstResult = results.first else {
+                    fatalError("判定不可")
+            }
+            
+            //上の処理を待たずに、非同期で行われる
+            DispatchQueue.main.async {
+                //0~1の値で呼ばれてるから100倍して%にしてる。\の後は変数
+                self?.photoInfoDisplay.text = "確率 = \(Int(firstResult.confidence * 100))%, \n\n詳細 \((firstResult.identifier))"
+            }
+        }
+        //requestの実行
+        guard let ciImage = CIImage(image: image) else {
+            fatalError("画像を変換できない")
+        }
+        //もしciImageを得られたら次へ行く
+        let imageHandler = VNImageRequestHandler(ciImage: ciImage)
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+            do {
+                try imageHandler.perform([request])
+            } catch{
+                print("エラー\(error)")
+            }
     }
     
 }
 
+}
