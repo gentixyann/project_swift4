@@ -46,7 +46,7 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     //画像の判定（推測の意味でInference）
     func imagenInference(image: UIImage) {
-        //モデルを読み込む処理 guardはある条件を満たしていたら処理をする
+        //モデルを読み込む処理 guardはある条件を満たしていたら処理をする。VNCoreMLModelの引数でどのモデルかを定義
         guard let model = try? VNCoreMLModel(for: Resnet50().model) else {
             fatalError("モデルをロードできん")
         }
@@ -69,11 +69,13 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         guard let ciImage = CIImage(image: image) else {
             fatalError("画像を変換できない")
         }
-        //もしciImageを得られたら次へ行く
+        //もしciImageを得られたら次へ行く。imageHandlerでrequestを処理するためのオブジェクトを生成
+        //VNImageRequestHandlerの引数には判定をしたい画像
         let imageHandler = VNImageRequestHandler(ciImage: ciImage)
         
         DispatchQueue.global(qos: .userInteractive).async {
             do {
+                //performメソッドでrequestを実行
                 try imageHandler.perform([request])
             } catch{
                 print("エラー\(error)")
