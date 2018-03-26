@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ImageAI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ov3-ov-PRM">
+                                <rect key="frame" x="40" y="40" width="295" height="230"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="230" id="yMF-gm-3gB"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="phC-wV-QEB">
+                                <rect key="frame" x="20" y="567" width="335" height="60"/>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="smz-fw-JTR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="take photo"/>
+                                <connections>
+                                    <action selector="takePhoto:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6lR-1U-OLF"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aGm-qH-ebP">
+                                <rect key="frame" x="0.0" y="290" width="375" height="120"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Xej-nh-rZ2"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ETN-DE-ybw" firstAttribute="trailing" secondItem="ov3-ov-PRM" secondAttribute="trailing" constant="40" id="Iff-h9-zzz"/>
+                            <constraint firstItem="aGm-qH-ebP" firstAttribute="trailing" secondItem="ETN-DE-ybw" secondAttribute="trailing" id="Zyo-zb-b2K"/>
+                            <constraint firstItem="ETN-DE-ybw" firstAttribute="bottom" secondItem="phC-wV-QEB" secondAttribute="bottom" constant="40" id="dj7-eE-YmJ"/>
+                            <constraint firstItem="ov3-ov-PRM" firstAttribute="top" secondItem="ETN-DE-ybw" secondAttribute="top" constant="20" id="hHa-Ck-CAd"/>
+                            <constraint firstItem="aGm-qH-ebP" firstAttribute="top" secondItem="ov3-ov-PRM" secondAttribute="bottom" constant="20" id="lCX-qm-pf1"/>
+                            <constraint firstItem="aGm-qH-ebP" firstAttribute="leading" secondItem="ETN-DE-ybw" secondAttribute="leading" id="luB-BK-aeB"/>
+                            <constraint firstItem="ETN-DE-ybw" firstAttribute="trailing" secondItem="phC-wV-QEB" secondAttribute="trailing" constant="20" id="u20-PK-f1v"/>
+                            <constraint firstItem="ov3-ov-PRM" firstAttribute="leading" secondItem="ETN-DE-ybw" secondAttribute="leading" constant="40" id="wRA-PG-ZmU"/>
+                            <constraint firstItem="phC-wV-QEB" firstAttribute="leading" secondItem="ETN-DE-ybw" secondAttribute="leading" constant="20" id="zhK-Uj-RQU"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ETN-DE-ybw"/>
+                    </view>
+                    <connections>
+                        <outlet property="photoDisplay" destination="ov3-ov-PRM" id="21E-9R-mpH"/>
+                        <outlet property="photoInfoDisplay" destination="aGm-qH-ebP" id="23X-hk-74T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.5" y="133.5"/>
+        </scene>
+    </scenes>
+</document>
