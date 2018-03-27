@@ -10,6 +10,8 @@
 import UIKit
 import CoreML
 import Vision
+//音声やビデオ映像を扱うフレームワーク
+import AVFoundation
 
 //Delegateはイベントを検知してプログラムに渡す役割
 class ViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate{
@@ -62,7 +64,17 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
             //上の処理を待たずに、非同期で行われる
             DispatchQueue.main.async {
                 //0~1の値で呼ばれてるから100倍して%にしてる。\の後は変数
-                self?.photoInfoDisplay.text = "確率 = \(Int(firstResult.confidence * 100))%, \n\n詳細 \((firstResult.identifier))"
+//                self?.photoInfoDisplay.text = "確率 = \(Int(firstResult.confidence * 100))%, \n\n詳細 \((firstResult.identifier))"
+                
+                //音声読み上げ用
+                self?.photoInfoDisplay.text = "Accuracy: = \(Int(firstResult.confidence * 100))%, \n\nText Label \((firstResult.identifier))"
+                
+                let utterWords = AVSpeechUtterance(string: (self?.photoInfoDisplay.text)!)
+                utterWords.voice = AVSpeechSynthesisVoice(language: "en-us")
+                //音声を合成するためのオブジェクトをコンストラクターを呼んで作る
+                let synthesizer = AVSpeechSynthesizer()
+                //speakメソッドで喋らす
+                synthesizer.speak(utterWords)
             }
         }
         //requestの実行
