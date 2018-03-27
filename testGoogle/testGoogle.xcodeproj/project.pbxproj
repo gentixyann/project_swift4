@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D9CEA7A90345E8F7E32680F /* Pods_testGoogle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8F5E5E5E15CD3CB8F697EC3 /* Pods_testGoogle.framework */; };
+		9C3EFF80A836B0064FC0E546 /* libPods-testGoogle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21948600676A023F7BB4C506 /* libPods-testGoogle.a */; };
 		B2B3B0AC206A770D00CC3294 /* key.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2B3B0AB206A770D00CC3294 /* key.plist */; };
 		B2B98BB6206A653100E5F88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B98BB5206A653100E5F88E /* AppDelegate.swift */; };
 		B2B98BB8206A653100E5F88E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B98BB7206A653100E5F88E /* ViewController.swift */; };
@@ -17,8 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		21948600676A023F7BB4C506 /* libPods-testGoogle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testGoogle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		381585841674033D4E58804C /* Pods-testGoogle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGoogle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGoogle/Pods-testGoogle.debug.xcconfig"; sourceTree = "<group>"; };
-		A8F5E5E5E15CD3CB8F697EC3 /* Pods_testGoogle.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testGoogle.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B3B0AB206A770D00CC3294 /* key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = key.plist; sourceTree = "<group>"; };
 		B2B98BB2206A653100E5F88E /* testGoogle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testGoogle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B98BB5206A653100E5F88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,7 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0D9CEA7A90345E8F7E32680F /* Pods_testGoogle.framework in Frameworks */,
+				9C3EFF80A836B0064FC0E546 /* libPods-testGoogle.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,7 +86,7 @@
 		F05377295DCD65B87D762FEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A8F5E5E5E15CD3CB8F697EC3 /* Pods_testGoogle.framework */,
+				21948600676A023F7BB4C506 /* libPods-testGoogle.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -171,11 +171,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-testGoogle/Pods-testGoogle-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlacePicker/Frameworks/GooglePlacePicker.framework/Resources/GooglePlacePicker.bundle",
 				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlacePicker.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
