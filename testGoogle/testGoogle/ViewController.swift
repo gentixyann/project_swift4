@@ -11,25 +11,38 @@ import GoogleMaps
 import GooglePlaces
 
 class ViewController: UIViewController {
-
     
+    var googleMap : GMSMapView!
+    
+    //緯度経度 -> 金沢駅
+    let latitude: CLLocationDegrees = 36.5780574
+    let longitude: CLLocationDegrees = 136.6486596
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        // Create a GMSCameraPosition that tells the map to display the
-        // coordinate -33.86,151.20 at zoom level 6.
-        let camera = GMSCameraPosition.camera(withLatitude: -33.86, longitude: 151.20, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        mapView.isMyLocationEnabled = true
-        view = mapView
         
-        // Creates a marker in the center of the map.
-        let marker = GMSMarker()
-        marker.position = CLLocationCoordinate2D(latitude: -33.86, longitude: 151.20)
-        marker.title = "Sydney"
-        marker.snippet = "Australia"
-        marker.map = mapView
+        // ズームレベル.
+        let zoom: Float = 15
+        
+        // カメラを生成.
+        let camera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: latitude,longitude: longitude, zoom: zoom)
+        
+        // MapViewを生成.
+        googleMap = GMSMapView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        
+        // MapViewにカメラを追加.
+        googleMap.camera = camera
+        
+        //マーカーの作成
+        let marker: GMSMarker = GMSMarker()
+        marker.position = CLLocationCoordinate2DMake(latitude, longitude)
+        marker.map = googleMap
+        
+        
+        //viewにMapViewを追加.
+        self.view.addSubview(googleMap)
+        
     }
     
     
