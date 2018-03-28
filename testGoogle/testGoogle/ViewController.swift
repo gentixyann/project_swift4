@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import GooglePlaces
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +33,9 @@ class ViewController: UIViewController {
     
     
     @IBAction func searchWithAddress(_ sender: Any) {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        self.present(searchController, animated:true, completion: nil)
     }
     
 }
