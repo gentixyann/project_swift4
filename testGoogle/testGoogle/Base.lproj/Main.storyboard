@@ -21,7 +21,11 @@
                         <viewLayoutGuide key="safeArea" id="R6g-2p-FwW"/>
                     </view>
                     <navigationItem key="navigationItem" title="address" id="W1E-J5-x1Y">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="z02-JB-oS5"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="z02-JB-oS5">
+                            <connections>
+                                <action selector="searchWithAddress:" destination="BYZ-38-t0r" id="CDS-y1-pzQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="4WZ-Ty-j2o" id="tyw-TD-jwy"/>
