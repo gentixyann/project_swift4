@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9C3EFF80A836B0064FC0E546 /* libPods-testGoogle.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 21948600676A023F7BB4C506 /* libPods-testGoogle.a */; };
+		B27250AB206BC1B40042F605 /* SearchResultsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B27250AA206BC1B40042F605 /* SearchResultsController.swift */; };
 		B2B3B0AC206A770D00CC3294 /* key.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2B3B0AB206A770D00CC3294 /* key.plist */; };
 		B2B98BB6206A653100E5F88E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B98BB5206A653100E5F88E /* AppDelegate.swift */; };
 		B2B98BB8206A653100E5F88E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B98BB7206A653100E5F88E /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		21948600676A023F7BB4C506 /* libPods-testGoogle.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-testGoogle.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		381585841674033D4E58804C /* Pods-testGoogle.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testGoogle.debug.xcconfig"; path = "Pods/Target Support Files/Pods-testGoogle/Pods-testGoogle.debug.xcconfig"; sourceTree = "<group>"; };
+		B27250AA206BC1B40042F605 /* SearchResultsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsController.swift; sourceTree = "<group>"; };
 		B2B3B0AB206A770D00CC3294 /* key.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = key.plist; sourceTree = "<group>"; };
 		B2B98BB2206A653100E5F88E /* testGoogle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testGoogle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B98BB5206A653100E5F88E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 			children = (
 				B2B98BB5206A653100E5F88E /* AppDelegate.swift */,
 				B2B98BB7206A653100E5F88E /* ViewController.swift */,
+				B27250AA206BC1B40042F605 /* SearchResultsController.swift */,
 				B2B98BB9206A653100E5F88E /* Main.storyboard */,
 				B2B98BBC206A653100E5F88E /* Assets.xcassets */,
 				B2B98BBE206A653100E5F88E /* LaunchScreen.storyboard */,
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2B98BB8206A653100E5F88E /* ViewController.swift in Sources */,
+				B27250AB206BC1B40042F605 /* SearchResultsController.swift in Sources */,
 				B2B98BB6206A653100E5F88E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
