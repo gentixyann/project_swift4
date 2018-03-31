@@ -20,14 +20,11 @@ class ViewController: UIViewController , UISearchBarDelegate , LocateOnTheMap,GM
         //        resultText?.text = error.localizedDescription
     }
     
-    
 //     * Called when autocomplete predictions are available.
 //     * @param predictions an array of GMSAutocompletePrediction objects.
     public func didAutocomplete(with predictions: [GMSAutocompletePrediction]) {
         //self.resultsArray.count + 1
-        
         for prediction in predictions {
-            
             if let prediction = prediction as GMSAutocompletePrediction!{
                 self.resultsArray.append(prediction.attributedFullText.string)
             }
@@ -84,7 +81,6 @@ class ViewController: UIViewController , UISearchBarDelegate , LocateOnTheMap,GM
             marker.title = "Address : \(title)"
             marker.map = self.googleMapsView
         }
-        
     }
     
     
@@ -100,8 +96,5 @@ class ViewController: UIViewController , UISearchBarDelegate , LocateOnTheMap,GM
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
 }
 
