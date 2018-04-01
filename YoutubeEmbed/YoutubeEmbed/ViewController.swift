@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import WebKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var myWebView: UIWebView!
+    
+    
+    @IBOutlet var myWebView: WKWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +29,7 @@ class ViewController: UIViewController {
     
     func getVideo(videoCode: String){
         let url = URL(string: "https://www.youtube.com/embed/\(videoCode)")
-        myWebView.loadRequest(URLRequest(url: url!))
+        myWebView.load(URLRequest(url: url!))
     }
     
     
