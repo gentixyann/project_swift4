@@ -31,7 +31,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         super.viewDidLoad()
         self.title = "Home"
         self.view.backgroundColor = UIColor.white
-        myMapView.delegate=self
+        mapView.delegate=self
         
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
@@ -66,14 +66,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         showPartyMarkers(lat: lat, long: long)
         
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 17.0)
-        myMapView.camera = camera
+        mapView.camera = camera
         txtFieldSearch.text=place.formattedAddress
         chosenPlace = MyPlace(name: place.formattedAddress!, lat: lat, long: long)
         let marker=GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: lat, longitude: long)
         marker.title = "\(place.name)"
         marker.snippet = "\(place.formattedAddress!)"
-        marker.map = myMapView
+        marker.map = mapView
         
         self.dismiss(animated: true, completion: nil) // dismiss after place selected
     }
@@ -88,9 +88,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     
     func initGoogleMaps() {
         let camera = GMSCameraPosition.camera(withLatitude: 28.7041, longitude: 77.1025, zoom: 17.0)
-        self.myMapView.camera = camera
-        self.myMapView.delegate = self
-        self.myMapView.isMyLocationEnabled = true
+        self.mapView.camera = camera
+        self.mapView.delegate = self
+        self.mapView.isMyLocationEnabled = true
     }
     
     // MARK: CLLocation Manager Delegate
@@ -107,7 +107,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         let long = (location?.coordinate.longitude)!
         let camera = GMSCameraPosition.camera(withLatitude: lat, longitude: long, zoom: 17.0)
         
-        self.myMapView.animate(to: camera)
+        self.mapView.animate(to: camera)
         
         showPartyMarkers(lat: lat, long: long)
     }
@@ -144,7 +144,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     }
     
     func showPartyMarkers(lat: Double, long: Double) {
-        myMapView.clear()
+        mapView.clear()
         for i in 0..<3 {
             let randNum=Double(arc4random_uniform(30))/10000
             let marker=GMSMarker()
@@ -160,14 +160,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             } else {
                 marker.position = CLLocationCoordinate2D(latitude: lat+randNum, longitude: long+randNum)
             }
-            marker.map = self.myMapView
+            marker.map = self.mapView
         }
     }
     
     @objc func btnMyLocationAction() {
-        let location: CLLocation? = myMapView.myLocation
+        let location: CLLocation? = mapView.myLocation
         if location != nil {
-            myMapView.animate(toLocation: (location?.coordinate)!)
+            mapView.animate(toLocation: (location?.coordinate)!)
         }
     }
     
@@ -187,11 +187,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
     }
     
     func setupViews() {
-        view.addSubview(myMapView)
-        myMapView.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
-        myMapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
-        myMapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
-        myMapView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 60).isActive=true
+        view.addSubview(mapView)
+        mapView.topAnchor.constraint(equalTo: view.topAnchor).isActive=true
+        mapView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive=true
+        mapView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive=true
+        mapView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 60).isActive=true
         
         self.view.addSubview(txtFieldSearch)
         txtFieldSearch.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10).isActive=true
@@ -209,7 +209,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         btnMyLocation.heightAnchor.constraint(equalTo: btnMyLocation.widthAnchor).isActive=true
     }
     
-    let myMapView: GMSMapView = {
+    let mapView: GMSMapView = {
         let v=GMSMapView()
         v.translatesAutoresizingMaskIntoConstraints=false
         return v

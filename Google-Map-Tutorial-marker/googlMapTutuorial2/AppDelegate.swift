@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
+        //Storyboardなしでやる場合にこれがいる。最初に起動する画面を指定してる
         self.window = UIWindow(frame: UIScreen.main.bounds)
         if let window = self.window {
             window.backgroundColor = UIColor.white
