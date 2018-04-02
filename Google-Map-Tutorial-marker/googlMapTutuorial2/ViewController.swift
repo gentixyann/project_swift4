@@ -4,7 +4,7 @@
 //
 //  Created by Muskan on 12/17/17.
 //  Copyright © 2017 akhil. All rights reserved.
-//
+//オリジナル版
 
 import UIKit
 import GoogleMaps
