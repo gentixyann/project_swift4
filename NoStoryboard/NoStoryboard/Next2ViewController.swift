@@ -13,23 +13,20 @@ class Next2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let goButton = UIButton(frame: CGRect(x: 100,y: 0,width: 100,height:100))
-        goButton.setTitle("Go！next", for: .normal)
-        goButton.backgroundColor = UIColor.black
-        goButton.addTarget(self, action: #selector(Next2ViewController.goNext(_:)), for: .touchUpInside)
-        view.addSubview(goButton)
+//        let goButton = UIButton(frame: CGRect(x: 100,y: 300,width: 100,height:100))
+//        goButton.setTitle("View3", for: .normal)
+//        goButton.backgroundColor = UIColor.black
+//        view.addSubview(goButton)
+        
+        let label = UILabel()
+        label.frame = CGRect(x:150, y:200, width:160, height:30)
+        label.text = "View3"
+        label.textColor = UIColor.blue
+        self.view.addSubview(label)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-    
-    @objc func goNext(_ sender: UIButton) {
-        let next2vc = Next2ViewController()
-        let goButton = UIButton(frame: CGRect(x: 100,y: 200,width: 100,height:100))
-        goButton.setTitle("Go！next", for: .normal)
-        next2vc.view.backgroundColor = UIColor.red
-        self.navigationController?.pushViewController(next2vc, animated: true)
     }
     
 }

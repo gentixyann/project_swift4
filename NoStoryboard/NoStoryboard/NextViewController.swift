@@ -18,8 +18,8 @@ final class NextViewController: UIViewController {
         backButton.addTarget(self, action: #selector(NextViewController.back(_:)), for: .touchUpInside)
         view.addSubview(backButton)
         
-        let goButton = UIButton(frame: CGRect(x: 100,y: 0,width: 100,height:100))
-        goButton.setTitle("Go！", for: .normal)
+        let goButton = UIButton(frame: CGRect(x: 100,y: 500,width: 100,height:100))
+        goButton.setTitle("View2の赤", for: .normal)
         goButton.backgroundColor = UIColor.red
         goButton.addTarget(self, action: #selector(NextViewController.goNext(_:)), for: .touchUpInside)
         view.addSubview(goButton)
@@ -35,7 +35,8 @@ final class NextViewController: UIViewController {
     
     @objc func goNext(_ sender: UIButton) {
         let next2vc = Next2ViewController()
-        next2vc.view.backgroundColor = UIColor.red
+        //ここで次の画面の色を指定してる
+        next2vc.view.backgroundColor = UIColor.white
         self.navigationController?.pushViewController(next2vc, animated: true)
     }
 
