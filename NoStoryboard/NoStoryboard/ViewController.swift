@@ -12,14 +12,25 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let nextButton = UIButton(frame: CGRect(x: 0,y: 0,width: 100,height:100))
+        nextButton.setTitle("Go!", for: .normal)
+        nextButton.backgroundColor = UIColor.blue
+        nextButton.addTarget(self, action: #selector(ViewController.goNext(_:)), for: .touchUpInside)
+        view.addSubview(nextButton)
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
+    
+    @objc func goNext(_ sender: UIButton) {// selectorで呼び出す場合Swift4からは「@objc」をつける。
+        let nextVC = NextViewController()
+        let naviVC = UINavigationController(rootViewController: nextVC)
+        nextVC.view.backgroundColor = UIColor.blue
+        self.present(naviVC, animated: true, completion: nil)
+    }
 
 }
 

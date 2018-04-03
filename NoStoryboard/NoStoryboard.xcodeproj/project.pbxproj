@@ -11,9 +11,8 @@
 		B2006A26207335B00092FB88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2006A25207335B00092FB88 /* ViewController.swift */; };
 		B2006A2B207335B00092FB88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2006A2A207335B00092FB88 /* Assets.xcassets */; };
 		B2006A2E207335B00092FB88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2006A2C207335B00092FB88 /* LaunchScreen.storyboard */; };
-		B2006A36207336420092FB88 /* Nav1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2006A35207336420092FB88 /* Nav1ViewController.swift */; };
-		B2006A38207337380092FB88 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2006A37207337380092FB88 /* SecondViewController.swift */; };
-		B2006A3A207338960092FB88 /* Nav2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2006A39207338960092FB88 /* Nav2ViewController.swift */; };
+		B2006A36207336420092FB88 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2006A35207336420092FB88 /* NextViewController.swift */; };
+		B2006A38207337380092FB88 /* Next2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2006A37207337380092FB88 /* Next2ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,9 +22,8 @@
 		B2006A2A207335B00092FB88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2006A2D207335B00092FB88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2006A2F207335B00092FB88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B2006A35207336420092FB88 /* Nav1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nav1ViewController.swift; sourceTree = "<group>"; };
-		B2006A37207337380092FB88 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		B2006A39207338960092FB88 /* Nav2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nav2ViewController.swift; sourceTree = "<group>"; };
+		B2006A35207336420092FB88 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
+		B2006A37207337380092FB88 /* Next2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Next2ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +57,8 @@
 			isa = PBXGroup;
 			children = (
 				B2006A23207335B00092FB88 /* AppDelegate.swift */,
-				B2006A35207336420092FB88 /* Nav1ViewController.swift */,
-				B2006A37207337380092FB88 /* SecondViewController.swift */,
-				B2006A39207338960092FB88 /* Nav2ViewController.swift */,
+				B2006A35207336420092FB88 /* NextViewController.swift */,
+				B2006A37207337380092FB88 /* Next2ViewController.swift */,
 				B2006A25207335B00092FB88 /* ViewController.swift */,
 				B2006A2A207335B00092FB88 /* Assets.xcassets */,
 				B2006A2C207335B00092FB88 /* LaunchScreen.storyboard */,
@@ -141,9 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2006A3A207338960092FB88 /* Nav2ViewController.swift in Sources */,
-				B2006A38207337380092FB88 /* SecondViewController.swift in Sources */,
-				B2006A36207336420092FB88 /* Nav1ViewController.swift in Sources */,
+				B2006A38207337380092FB88 /* Next2ViewController.swift in Sources */,
+				B2006A36207336420092FB88 /* NextViewController.swift in Sources */,
 				B2006A26207335B00092FB88 /* ViewController.swift in Sources */,
 				B2006A24207335B00092FB88 /* AppDelegate.swift in Sources */,
 			);
