@@ -112,14 +112,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         showPartyMarkers(lat: lat, long: long)
     }
     
-    // MARK: GOOGLE MAP DELEGATE
+     //MARK: GOOGLE MAP DELEGATE
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         guard let customMarkerView = marker.iconView as? CustomMarkerView else { return false }
         let img = customMarkerView.img!
         let customMarker = CustomMarkerView(frame: CGRect(x: 0, y: 0, width: customMarkerWidth, height: customMarkerHeight), image: img, borderColor: UIColor.white, tag: customMarkerView.tag)
-        
+
         marker.iconView = customMarker
-        
+
         return false
     }
     
@@ -149,6 +149,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
             let randNum=Double(arc4random_uniform(30))/10000
             let marker=GMSMarker()
             let customMarker = CustomMarkerView(frame: CGRect(x: 0, y: 0, width: customMarkerWidth, height: customMarkerHeight), image: previewDemoData[i].img, borderColor: UIColor.darkGray, tag: i)
+            print(i)
             marker.iconView=customMarker
             let randInt = arc4random_uniform(4)
             if randInt == 0 {
