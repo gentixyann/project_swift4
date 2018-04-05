@@ -112,14 +112,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         showPartyMarkers(lat: lat, long: long)
     }
     
-     //MARK: GOOGLE MAP DELEGATE
+    //MARK: GOOGLE MAP DELEGATE
     func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
         guard let customMarkerView = marker.iconView as? CustomMarkerView else { return false }
         let img = customMarkerView.img!
         let customMarker = CustomMarkerView(frame: CGRect(x: 0, y: 0, width: customMarkerWidth, height: customMarkerHeight), image: img, borderColor: UIColor.white, tag: customMarkerView.tag)
-
+        
         marker.iconView = customMarker
-
+        
         return false
     }
     
@@ -244,7 +244,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, GMSMapViewDel
         return v
     }()
 }
-
 
 
 
